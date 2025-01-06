@@ -1,9 +1,12 @@
 package com.example.project;
-import java.util.Random;
+
 public class Day1{
     private static String[] elf_names = {"Glitter", "Chocolate","Tiny","Snowflake","Frosty"};
-
     public static String generateElfName(String name){
-        return "";  
+        if (name == null || name.trim().isEmpty()){
+            throw new IllegalArgumentException("Name cannot be null or empty");
+        }
+        int randomInt = (int) (Math.random() * elf_names.length);
+        return elf_names[randomInt] + " " + name;  
     }
 }
